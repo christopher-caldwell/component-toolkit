@@ -2,6 +2,7 @@
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": "./src",
+    "outDir": "dist",
     "jsx": "preserve",
     "esModuleInterop": true,
     "module": "esnext",
