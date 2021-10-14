@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": "./src",
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
+  "include": ["src"]
+}
