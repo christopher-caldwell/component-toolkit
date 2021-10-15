@@ -1,5 +1,6 @@
 import { styled } from '@mui/material'
 import { Toolbar as MuiToolbar, IconButton } from '@mui/material'
+import isPropValid from '@emotion/is-prop-valid'
 
 interface DrawerProps {
   isOpen: boolean
@@ -36,7 +37,7 @@ export const Toolbar = styled(MuiToolbar)`
 export interface TitleProps {
   shouldRemoveTitle?: boolean
 }
-export const Title = styled('h4')<TitleProps>`
+export const Title = styled('h4', { shouldForwardProp: isPropValid })<TitleProps>`
   margin: 0;
   margin-left: 10px;
   transition: all 0.2s ease;

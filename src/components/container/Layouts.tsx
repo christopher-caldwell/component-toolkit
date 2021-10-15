@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { styled, Grid } from '@mui/material'
 import isValidProp from '@emotion/is-prop-valid'
 
-import { getMobileBreakpoint } from 'hooks'
+import { getMobileBreakpoint } from '@/hooks'
 
 interface RootProps {
   isOffColor?: boolean

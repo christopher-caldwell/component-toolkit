@@ -16,16 +16,11 @@ import {
   DrawerProps,
   BrandLogo,
 } from './components'
-import { useIsMobile } from 'hooks'
+import { useIsMobile } from '@/hooks'
 
-export const Header: FC<HeaderProps> = ({
-  children,
-  logo,
-  drawerConfig,
-  shouldRemoveTitle,
-  LeftContent = null,
-  RightContent = null,
-}) => {
+export const Header: FC<HeaderProps> = ({ children }) => {
+  const { headerConfig } = useContext(ToolkitConfig) || {}
+  const { logo, drawerConfig, shouldRemoveTitle, LeftContent = null, RightContent = null } = headerConfig
   const isMobile = useIsMobile()
   const trigger = useScrollTrigger()
 
@@ -73,7 +68,6 @@ export const LogoTitle: FC<LogoProps> = ({ logo, shouldRemoveTitle }) => {
   )
 }
 export interface HeaderProps extends LogoProps {
-  children: React.ReactElement
   drawerConfig?: Omit<DrawerProps, 'logo'>
   LeftContent?: JSX.Element
   RightContent?: JSX.Element

@@ -28,7 +28,7 @@ export const HeroRoot = styled('div', {
       backgroundUrl
         ? `
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), ${background.paper}),
-    url(${require('assets/images/hero/' + backgroundUrl)});
+    url(${require(backgroundUrl)});
   background-size: cover;
   `
         : ''}

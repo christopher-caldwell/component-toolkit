@@ -4,7 +4,7 @@ import LightModeIcon from '@mui/icons-material/WbSunny'
 import { styled } from '@mui/material'
 import isValidProp from '@emotion/is-prop-valid'
 
-import { WhichTheme } from 'providers'
+import { WhichTheme } from '@/providers'
 
 export const DarkModeToggle: FC = () => {
   const { theme, setTheme } = useContext(WhichTheme)

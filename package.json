@@ -5,10 +5,13 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint --ext .ts,.tsx src",
     "format": "prettier --write src",
-    "build": "sh scripts/build.sh"
+    "build": "sh scripts/build.sh",
+    "build:watch": "nodemon --exec sh scripts/build.sh --delay 3 --ext .ts,.tsx --watch src"
   },
   "dependencies": {
     "@caldwell619/react-hooks": "^0.0.7",
+    "@emotion/babel-plugin": "^11.3.0",
+    "@emotion/cache": "^11.4.0",
     "@emotion/react": "^11.4.1",
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.3.0",
@@ -27,9 +30,11 @@
     "@types/react-swipeable-views-utils": "^0.13.3",
     "eslint-plugin-prettier": "^4.0.0",
     "microbundle": "^0.14.0",
+    "nodemon": "^2.0.13",
     "prettier": "^2.4.1",
     "rc": "^1.2.8",
     "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-scripts": "^4.0.3",
     "tscpaths": "^0.0.9",
     "typescript": "^4.4.3"

@@ -18,7 +18,6 @@
 # misc
 .DS_Store
 *.pem
-**/build.toml
 
 # debug
 npm-debug.log*

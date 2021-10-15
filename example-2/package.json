@@ -1,0 +1,22 @@
+{
+  "name": "example-2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node ../node_modules/next/dist/bin/next dev",
+    "build": "node ../node_modules/next/dist/bin/next build",
+    "start": "node ../node_modules/next/dist/bin/next start",
+    "lint": "node ../node_modules/next/dist/bin/next lint"
+  },
+  "dependencies": {
+    "@thatdevdude/component-toolkit": "link:../",
+    "next": "link:../node_modules/next",
+    "react": "link:../node_modules/react",
+    "react-dom": "link:../node_modules/react-dom"
+  },
+  "devDependencies": {
+    "@types/react": "link:../node_modules/@types/react",
+    "eslint": "link:../node_modules/eslint",
+    "typescript": "link:../node_modules/typescript"
+  }
+}
