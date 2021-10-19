@@ -11,10 +11,10 @@ export const Contact: FC<ContactProps> = ({ address, contacts = [] }) => {
       <div>{address}</div>
       <br />
       {contacts.map(({ name, value, display }) => (
-        <FooterSubtitle href={value}>
+        <FooterSubtitle key={value} href={value}>
           {display ? (
             <span>
-              Phone: &nbsp;<AltColorText>{display}</AltColorText>
+              {name}: &nbsp;<AltColorText>{display}</AltColorText>
             </span>
           ) : (
             name
@@ -25,7 +25,7 @@ export const Contact: FC<ContactProps> = ({ address, contacts = [] }) => {
   )
 }
 
-interface ContactProps {
+export interface ContactProps {
   address?: string
   contacts?: {
     name: string

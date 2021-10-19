@@ -1,17 +1,17 @@
 import { FC, useContext } from 'react'
 import { Grid } from '@mui/material'
 
-import { Container, FooterTitle, Copyright, Contact, FooterLink, FooterLogo } from './components'
+import { Container, FooterTitle, Copyright, Contact, FooterLink, FooterLogo, ContactProps } from './components'
 
 import { ToolkitConfig } from '@/providers/Toolkit'
 import { DrawerProps } from '@/components/header/components/Drawer'
 
-export const Footer: FC<FooterProps> = ({ links, logo }) => {
+export const Footer: FC<FooterProps> = ({ links, logo, contact }) => {
   const { tenantName } = useContext(ToolkitConfig)
   return (
     <Container>
       <Grid container item xs={12} md={9} justifyContent='center'>
-        <Contact />
+        <Contact {...contact} />
         {links.map(({ title, children, root }) => (
           <Grid item xs={12} md={3} key={`root-${title}`}>
             <FooterTitle>{title}</FooterTitle>
@@ -40,6 +40,7 @@ export const Footer: FC<FooterProps> = ({ links, logo }) => {
 export interface FooterProps {
   links: RootFooterItem[]
   logo?: DrawerProps['logo']
+  contact?: ContactProps
 }
 
 export interface RootFooterItem {

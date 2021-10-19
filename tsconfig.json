@@ -9,6 +9,7 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "declaration": true,
+    "sourceMap": true,
     "paths": {
       "@/*": ["*"]
     }

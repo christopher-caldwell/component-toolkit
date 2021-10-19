@@ -6,7 +6,8 @@
     "lint": "eslint --ext .ts,.tsx src",
     "format": "prettier --write src",
     "build": "sh scripts/build.sh",
-    "build:watch": "nodemon --exec sh scripts/build.sh --delay 3 --ext .ts,.tsx --watch src"
+    "build:watch": "nodemon --exec sh scripts/build.sh --delay 3 --ext .ts,.tsx --watch src",
+    "prepare": "yarn build"
   },
   "dependencies": {
     "@caldwell619/react-hooks": "^0.0.7",
@@ -18,7 +19,6 @@
     "@mui/icons-material": "^5.0.3",
     "@mui/material": "^5.0.3",
     "array-chop": "^1.0.1",
-    "next": "^11.1.2",
     "next-seo": "^4.28.1",
     "react-swipeable-views": "^0.14.0",
     "react-swipeable-views-utils": "^0.14.0"
@@ -30,6 +30,7 @@
     "@types/react-swipeable-views-utils": "^0.13.3",
     "eslint-plugin-prettier": "^4.0.0",
     "microbundle": "^0.14.0",
+    "next": "^11.1.2",
     "nodemon": "^2.0.13",
     "prettier": "^2.4.1",
     "rc": "^1.2.8",
@@ -38,6 +39,9 @@
     "react-scripts": "^4.0.3",
     "tscpaths": "^0.0.9",
     "typescript": "^4.4.3"
+  },
+  "peerDependencies": {
+    "next": ">=11"
   },
   "main": "dist/index.js",
   "source": "src/index.ts",
