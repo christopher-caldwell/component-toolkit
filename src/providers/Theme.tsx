@@ -1,12 +1,12 @@
 import { FC, useContext, useMemo } from 'react'
 import CssBaseline from '@mui/material/CssBaseline'
-import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles'
+import { ThemeProvider as MuiThemeProvider, createTheme, ThemeOptions } from '@mui/material/styles'
 
 import { WhichTheme } from './ChosenTheme'
 
-export const ThemeProvider: FC = ({ children }) => {
+export const ThemeProvider: FC<{ options: ThemeOptions }> = ({ children, options }) => {
   const { theme } = useContext(WhichTheme)
-  const muiTheme = useMemo(() => createThemeHelper(theme), [theme])
+  const muiTheme = useMemo(() => createThemeHelper(theme, options), [theme, options])
 
   return (
     <MuiThemeProvider theme={muiTheme}>
@@ -16,32 +16,11 @@ export const ThemeProvider: FC = ({ children }) => {
   )
 }
 
-const brandColor = '#55c6ce'
-const secondaryBrandColor = '#bea599'
-const createThemeHelper = (theme: 'dark' | 'light') => {
-  const isDark = theme === 'dark'
+const createThemeHelper = (theme: 'dark' | 'light', options: ThemeOptions) => {
   return createTheme({
     palette: {
       mode: theme,
-      background: {
-        default: isDark ? '#242526' : '#f0f0f0',
-        paper: isDark ? '#303030' : '#ffffff',
-      },
-      primary: {
-        main: brandColor,
-      },
-      secondary: {
-        main: secondaryBrandColor,
-      },
-      info: {
-        main: '#ffffff',
-      },
-      error: {
-        main: 'rgb(232, 51, 51)',
-      },
-      success: {
-        main: 'rgb(76,175,80)',
-      },
+      ...options,
     },
   })
 }
